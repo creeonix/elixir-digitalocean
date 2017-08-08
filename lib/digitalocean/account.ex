@@ -18,5 +18,5 @@ defmodule DigitalOcean.Account do
 	@doc """
 	Similar to `show/0` but returns the response body only.
 	"""
-	def show!, do: show |> body
+	def show!, do: show() |> body
 end

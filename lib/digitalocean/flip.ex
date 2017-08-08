@@ -8,7 +8,7 @@ defmodule DigitalOcean.FlIP do
 	import DigitalOcean, only: [get: 1, post: 2, del: 1, body: 1, full: 1]
 
 	def list, do: get("floating_ips") |> full
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	def show(ip), do: get("floating_ips/#{ip}") |> full
 	def show!(ip), do: show(ip) |> body

@@ -15,5 +15,5 @@ defmodule DigitalOcean.Size do
 	@doc """
 	Similar to `list/0` but returns the response body only.
 	"""
-	def list!, do: list |> body
+	def list!, do: list() |> body
 end

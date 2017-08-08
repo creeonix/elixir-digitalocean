@@ -11,7 +11,7 @@ defmodule DigitalOcean.Droplet do
 	List all Droplets.
 	"""
 	def list, do: get("droplets") |> full
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	@doc """
 	Get all Droplets with a given Tag. Same as `DigitalOcean.Tag.droplets/1`.

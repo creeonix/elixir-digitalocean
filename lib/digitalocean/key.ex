@@ -10,12 +10,12 @@ defmodule DigitalOcean.Key do
 	@doc """
 	List all SSH Keys.
 	"""
-	def list, do: url |> get |> full
+	def list, do: url() |> get() |> full
 
 	@doc """
 	Similar to `list/0` but returns the response body only.
 	"""
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	@doc """
 	Create a new SSH Key.
@@ -23,7 +23,7 @@ defmodule DigitalOcean.Key do
 	## Example
 		iex> DigitalOcean.Key.create("My SSH Public Key", "ssh-rsa AAA...4V example")
 	"""
-	def create(name, pub_key), do: url |> post(%{name: name, public_key: pub_key}) |> full
+	def create(name, pub_key), do: url() |> post(%{name: name, public_key: pub_key}) |> full
 
 	@doc """
 	Similar to `create/2` but returns the response body only.
@@ -67,5 +67,5 @@ defmodule DigitalOcean.Key do
 	def delete!(key_id), do: delete(key_id) |> body
 
 	defp url, do: "account/keys"
-	defp url(id), do: "#{url}/#{id}"
+	defp url(id), do: "#{url()}/#{id}"
 end

@@ -15,7 +15,7 @@ defmodule DigitalOcean do
 	defp process_request_body(req), do: Poison.encode!(req)
 
 	defp process_request_headers(headers) do
-		[{"Content-type", "application/json"}, {"Authorization", "Bearer #{get_token}"}] ++ headers
+		[{"Content-type", "application/json"}, {"Authorization", "Bearer #{get_token()}"}] ++ headers
 	end
 
 	defp process_response_body(""), do: ""

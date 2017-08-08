@@ -11,7 +11,7 @@ defmodule DigitalOcean.Droplet.Neighbor do
 	List *any/all* Droplets sharing the same physical hardware.
 	"""
 	def list, do: get("reports/droplet_neighbors") |> full
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	@doc """
 	Show neighbors for a given Droplet.

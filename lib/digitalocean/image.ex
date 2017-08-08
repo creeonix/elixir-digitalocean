@@ -8,14 +8,14 @@ defmodule DigitalOcean.Image do
 	import DigitalOcean, only: [get: 1, put: 2, del: 1, body: 1, full: 1]
 
 	def list, do: get("images") |> full
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	# "application" or "distribution"
 	def list(type), do: get("images?type=#{type}") |> full
 	def list!(type), do: list(type) |> body
 
 	def list_private, do: get("images?private=true") |> full
-	def list_private!, do: list_private |> body
+	def list_private!, do: list_private() |> body
 
 	def show(image_id), do: get("images/#{image_id}") |> full
 	def show!(image_id), do: show(image_id) |> body

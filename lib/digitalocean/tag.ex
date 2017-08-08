@@ -8,7 +8,7 @@ defmodule DigitalOcean.Tag do
 	import DigitalOcean, only: [get: 1, post: 2, put: 2, del: 1, del: 2, body: 1, full: 1]
 
 	def list, do: get("tags") |> full
-	def list!, do: list |> body
+	def list!, do: list() |> body
 
 	def create(name), do: post("tags", %{name: name}) |> full
 	def create!(name), do: create(name) |> body
