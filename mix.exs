@@ -21,9 +21,9 @@ defmodule DigitalOcean.Mixfile do
   end
 
   defp deps do [
-    {:poison, "~> 2.2"},
-    {:httpoison, "~> 0.9.0"},
-    {:ex_doc, "~> 0.13.0", only: :dev}
+    {:poison, "~> 3.0"},
+    {:httpoison, "~> 0.12"},
+    {:ex_doc, "~> 0.14", only: :dev}
   ] end
 
   defp package do [
